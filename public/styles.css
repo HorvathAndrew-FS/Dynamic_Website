@@ -2159,8 +2159,11 @@ progress {
     -webkit-overflow-scrolling: touch;
   }
 }
+.form-h2 {
+  color: rgba(69, 134, 129, 1);
+}
 .form-label {
-  margin-bottom: 0.5rem;
+  margin-top: 0.75rem;
 }
 
 .col-form-label {
@@ -11509,7 +11512,8 @@ body {
   }
   #mainNav .navbar-brand {
     padding: 0.5rem 0;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(69, 134, 129, 1);
+;
   }
   #mainNav .nav-link {
     transition: none;
