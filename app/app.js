@@ -32,7 +32,7 @@ app.use("/", router);
 //error handling middleware
 app.use((req, res, next) => {
     const error = new Error('Not Found!!!');
-    error.status(404);
+    error.status = 404;
     next(error);
 });
 app.use((error, req, res, next) => {
