@@ -27,49 +27,57 @@
                         <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
                         </div>
                         <h2 class="mb-5 form-h2 text-center">Create an account to receive updates!</h2>
-                        <form class="bg-light rounded p-4" method="post" >
+                        <% if(typeof(errors) != "undefined") {%>
+                        <form class="bg-light rounded p-4" method="POST" action="/validate">
+                             
                           <div class="form-row">
                             <div class="form-group col-md-8">
                                 <label class="form-label" for="fName">First Name</label>
                                 <input type="text" class="form-control" name="fName" placeholder="First Name">
+                                <%- errors.fNameMsg %> 
                                 <label class="form-label" for="lName">Last Name</label>
                                 <input type="text" class="form-control" name="lName" placeholder="Last Name">
+                                <%- errors.lNameMsg %>
                             </div>
                             <div class="form-group col-md-8">
                               <label class="form-label" for="inputEmail">Email</label>
-                              <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Enter Your Email">
+                              <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Enter Your Email"> <% errors.emailMsg %> 
                             </div>
                             <div class="form-group col-md-8">
                               <label class="form-label" for="inputPassword">Password</label>
                               <input type="password" class="form-control" name="inputPassword" placeholder="Password">
+                              <%- errors.passwordMsg %>
+                            </div>
+                              <div class="form-group col-md-8">
+                              <label class="form-label" for="inputPassword2">Re-Enter Password</label>
+                              <input type="password" class="form-control" name="inputPassword2" placeholder="Re-Enter Password"> <%- errors.passMatchMsg %>
                             </div>
                           </div>
                           <div class="form-group col-md-10">
                             <label class="form-label" for="inputAddress">Address</label>
                             <input type="text" class="form-control" name="inputAddress" placeholder="1234 Main St">
-                          </div>
-                          <div class="form-group col-md-10">
-                            <label class="form-label" for="inputAddress2">Address 2</label>
-                            <input type="text" class="form-control" name="inputAddress2" placeholder="Apartment, studio, or floor">
+                            <%- errors.addressMsg %>
                           </div>
                           <div class="form-row">
                             <div class="form-group col-md-4">
                               <label class="form-label" for="inputCity">City</label>
                               <input type="text" class="form-control" name="inputCity">
+                              <%- errors.cityMsg %>
                             </div>
                             <div class="form-group col-md-4">
                               <label class="form-label" for="inputState">State</label>
                               <input name="inputState" class="form-control">
-                              
-                              </input>
+                              <%- errors.stateMsg %> 
                             </div>
                             <div class="form-group col-md-2 mb-4">
                               <label class="form-label" for="inputZip">Zip</label>
                               <input type="text" class="form-control" name="inputZip">
+                              <%- errors.zipMsg %> 
                             </div>
                           </div>
 
                           <button type="submit" class="btn btn-primary">Sign Up!</button>
+                          <% } %> 
                         </form>
                     </div>
                 </div>
@@ -121,10 +129,6 @@
         <%-include('includes/footer') %>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+       
     </body>
 </html>

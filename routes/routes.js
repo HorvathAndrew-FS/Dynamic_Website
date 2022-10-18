@@ -25,4 +25,10 @@ router.get("/contact", (req, res) => {
     });
 });
 
+router.post("/validate", (req, res) => {
+    res.render("validate", {
+        pagename: 'Sign Up Successful',
+    });
+});
+
 module.exports = router;
