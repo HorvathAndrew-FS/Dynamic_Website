@@ -1,4 +1,5 @@
 let errors = {};
+
 const regex_Name = "\\b([A-ZÀ-ÿ][-,a-z. /]+[ ]*)+";
 const regex_Email = "/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/";
 const regex_Address = "^(\\d{1,}) [a-zA-Z0-9\\s]+(\\,)? [a-zA-Z]+(\\,)? [A-Z]{2} [0-9]{5,6}$";
@@ -8,7 +9,7 @@ const regex_zip = "/(^\d{5}$)|(^\d{5}-\d{4}$)/";
 const regex_Password = "/^[A-Za-z]\w{7,14}$/";
 
 
-const validate = (req) => {
+const validate = function(req) {
     const fName = req.body.fName;
     const lName = req.body.lName;
     const email = req.body.userEmail;
@@ -19,7 +20,7 @@ const validate = (req) => {
     const password = req.body.userPassword;
     const passMatch = req.body.userPassMatch;
 
-    console.log("validation page");
+let string = "validation page function";
     if(fname != regex_Name){
         errors.fnameMsg = "First Name is required";
     }
@@ -47,5 +48,7 @@ const validate = (req) => {
     if (passMatch != password){
         errors.passMatchMsg = "Passwords must match";
     }
+    return req.errors = errors;
+
     return errors;
-}
+};

@@ -2,15 +2,13 @@ const express = require('express');
 const router = express.Router();
 const formValidation =  require('../views/validate');
 
-const validate = () => {
+const validateForm = () => {
+     console.log('validateForm');
     return (req, res, next) => {
-        if(res.errors != undefined) {
-            console.log('validate');
-        res.send(formValidation(req.body));
+        if(res.errors == undefined) {
+           req.formValidation();
         } else {
-            res.render('form-view', { 
-                errors: errors
-            });
+      console.log('validateForm Else');
         }
     }
 };
@@ -45,9 +43,11 @@ router.get("/register", (req, res) => {
     });
 });
 
-router.post("/registration", validate, (res, req, next) => {
-    console.log('you submitted');
+router.post("/registration", validateForm, (res, req, next) => {
+
 });
+
+
 
 
 
