@@ -46,7 +46,7 @@ router.get("/register", (req, res) => {
 });
 
 router.post("/registration", validate, (res, req, next) => {
-    
+    console.log('you submitted');
 });
 
 
