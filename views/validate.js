@@ -19,6 +19,7 @@ const validate = (req) => {
     const password = req.body.userPassword;
     const passMatch = req.body.userPassMatch;
 
+    console.log("validation page");
     if(fname != regex_Name){
         errors.fnameMsg = "First Name is required";
     }

@@ -5,13 +5,12 @@ const formValidation =  require('../views/validate');
 const validate = () => {
     return (req, res, next) => {
         if(true){
+            console.log('validate');
         res.send(formValidation(req.body));
         } else {
             next();
         }
-
     }
-    
 };
 
 router.get("/", (req, res) => {
