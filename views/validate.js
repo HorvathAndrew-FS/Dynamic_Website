@@ -47,7 +47,5 @@ const validate = (req) => {
     if (passMatch != password){
         errors.passMatchMsg = "Passwords must match";
     }
-
-
-return errors;
+    return errors;
 }

@@ -4,11 +4,13 @@ const formValidation =  require('../views/validate');
 
 const validate = () => {
     return (req, res, next) => {
-        if(true){
+        if(res.errors != undefined) {
             console.log('validate');
         res.send(formValidation(req.body));
         } else {
-            next();
+            res.render('form-view', { 
+                errors: errors
+            });
         }
     }
 };
