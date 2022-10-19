@@ -11,6 +11,14 @@ const regex_Password = "/^[A-Za-z]\w{7,14}$/";
 const validate = (req) => {
     const fName = req.body.fName;
     const lName = req.body.lName;
+    const email = req.body.userEmail;
+    const address = req.body.userAddress;
+    const city = req.body.userCity;
+    const state = req.body.userState;
+    const zip = req.body.userZip;
+    const password = req.body.userPassword;
+    const passMatch = req.body.userPassMatch;
+
     if(fname != regex_Name){
         errors.fnameMsg = "First Name is required";
     }
@@ -23,19 +31,19 @@ const validate = (req) => {
     if (address != regex_Address){
         errors.addressMsg = "Invalid Address!"
     }
-    if(city != regex_City){
+    if (city != regex_City){
         errors.cityMsg = "Invalid City!"
     }
     if (state != regex_State){
         errors.stateMsg = "Invalid State!"
     }
-    if(zip != regex_Zip){
+    if (zip != regex_Zip){
         errors.zipMsg = "Invalid Zip!"
     }
     if (password != regex_Password){
         errors.passwordMsg = "Invalid Password! Must be at least 7 characters and start with a letter";
     }
-    if (password2 != password){
+    if (passMatch != password){
         errors.passMatchMsg = "Passwords must match";
     }
 

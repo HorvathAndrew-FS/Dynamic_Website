@@ -2160,7 +2160,7 @@ progress {
   }
 }
 .form-h2 {
-  color: rgba(69, 134, 129, 1);
+  color: rgba(183,7,98, .75);
 }
 .form-label {
   margin-top: 0.75rem;
@@ -11512,16 +11512,16 @@ body {
   }
   #mainNav .navbar-brand {
     padding: 0.5rem 0;
-    color: rgba(69, 134, 129, 1);
+    color: rgba(24, 105, 98, 1);
 ;
   }
   #mainNav .nav-link {
     transition: none;
     padding: 2rem 1.5rem;
-    color: rgba(69, 134, 129, 1);
+    color: rgba(24, 105, 98, 1);
   }
   #mainNav .nav-link:hover {
-    color: rgba(234,43,141, 1);
+    color: rgba(183,7,98, 1);
   }
   #mainNav .nav-link:active {
     color: #fff;
