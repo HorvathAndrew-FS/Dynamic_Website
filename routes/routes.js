@@ -5,7 +5,8 @@ const formValidation =  require('../views/validate');
 const validateForm = () => {
      console.log('validateForm');
     return (req, res, next) => {
-        if(res.errors == undefined) {
+        if(req.errors == undefined) {
+            console.log('validateForm if');
            req.formValidation();
         } else {
       console.log('validateForm Else');

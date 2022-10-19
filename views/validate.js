@@ -10,6 +10,8 @@ const regex_Password = "/^[A-Za-z]\w{7,14}$/";
 
 
 const validate = function(req) {
+    console.log ('validate.js file');
+
     const fName = req.body.fName;
     const lName = req.body.lName;
     const email = req.body.userEmail;
