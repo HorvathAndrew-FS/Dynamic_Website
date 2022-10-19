@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const formValidate =  require('../views/validate');
 
 router.get("/", (req, res) => {
     res.render('index', {
@@ -21,14 +22,16 @@ router.get("/projects", (req, res) => {
 
 router.get("/contact", (req, res) => {
     res.render('contact', {
+        pagename: 'Contact',
+    });
+});
+
+router.get("/register", (req, res) => {
+    res.render('register', {
         pagename: 'Sign Up',
     });
 });
 
-router.post("/validate", (req, res) => {
-    res.render("validate", {
-        pagename: 'Sign Up Successful',
-    });
-});
+router.post("/registration", formValidate);
 
 module.exports = router;
