@@ -27,17 +27,26 @@
                         <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
                         </div>
                         <h2 class="mb-5 form-h2 text-center">Create an account to receive updates!</h2>
-                        <% if (typeof(errors) == true) { %>
-                          <span><%='Sign Up Success' %></span>
-                          <% } %>  
-                        <% if(typeof(errors) != "undefined") {%>
-                        <form class="bg-light rounded p-4" method="POST" action="/registration">
+                          <% JSON.stringify(errors) %>
+                            <% if (typeof(errors) == true) { %>
+                            <span><%='Sign Up Success' %></span>
+                            <% } %>  
+                          
+                            <% if(typeof(errors) != "undefined") {%>
+                        
+                            <form class="bg-light rounded p-4" method="POST" action="/registration">
                              
                           <div class="form-row">
                             <div class="form-group col-md-8">
                                 <label class="form-label" for="fName">First Name</label>
                                 <input type="text" class="form-control" name="fName" placeholder="First Name">
-                                <span><%= errors.fNameMsg %></span> 
+                                
+                          
+                                
+                                <span><%= errors.fNameMsg %></span>
+
+                           
+
                                 <label class="form-label" for="lName">Last Name</label>
                                 <input type="text" class="form-control" name="lName" placeholder="Last Name">
                                 <%= errors.lNameMsg %>

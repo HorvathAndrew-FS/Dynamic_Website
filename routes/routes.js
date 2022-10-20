@@ -46,9 +46,9 @@ router.get("/register", (req, res) => {
 router.post('/registration', formValidation, (req, res) => {
   console.log('POSTED', req.errors);
   if (req.error) {
-    res.render('register', { errors: req.errors });
+    res.render('register', { errors: req.errors, pagename: "register", });
   } else {
-    res.render('register', { success: true });
+    res.render('register', { success: true, pagename: "register", });
   }
 });
 
