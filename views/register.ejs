@@ -27,29 +27,22 @@
                         <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
                         </div>
                         <h2 class="mb-5 form-h2 text-center">Create an account to receive updates!</h2>
-                          <% JSON.stringify(errors) %>
-                            <% if (typeof(errors) == true) { %>
-                            <span><%='Sign Up Success' %></span>
-                            <% } %>  
-                          
-                            <% if(typeof(errors) != "undefined") {%>
+                     
+                        <% if(typeof(errors) != "undefined") {%>
                         
                             <form class="bg-light rounded p-4" method="POST" action="/registration">
                              
                           <div class="form-row">
                             <div class="form-group col-md-8">
                                 <label class="form-label" for="fName">First Name</label>
-                                <input type="text" class="form-control" name="fName" placeholder="First Name">
+                                <input type="text" class="form-control" name="fName" placeholder="First Name" /> <span style="color: green"><%= errors.fnameMsg %></span>
                                 
-                          
-                                
-                                <span><%= errors.fNameMsg %></span>
 
                            
 
                                 <label class="form-label" for="lName">Last Name</label>
-                                <input type="text" class="form-control" name="lName" placeholder="Last Name">
-                                <%= errors.lNameMsg %>
+                                <input type="text" class="form-control" name="lName" placeholder="Last Name"/><span><%= errors.lnameMsg %></span>
+                                
                             </div>
                             <div class="form-group col-md-8">
                               <label class="form-label" for="userEmail">Email</label>
@@ -83,8 +76,7 @@
                             </div>
                             <div class="form-group col-md-2 mb-4">
                               <label class="form-label" for="userZip">Zip</label>
-                              <input type="text" class="form-control" name="userZip">
-                              <%= errors.zipMsg %> 
+                              <input type="text" class="form-control" name="userZip"><%= errors.zipMsg %> 
                             </div>
                           </div>
 

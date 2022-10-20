@@ -45,10 +45,13 @@ router.get("/register", (req, res) => {
 
 router.post('/registration', formValidation, (req, res) => {
   console.log('POSTED', req.errors);
-  if (req.error) {
-    res.render('register', { errors: req.errors, pagename: "register", });
+  console.log('BOOl', Object.keys(req.errors).length);
+  if (Object.keys(req.errors).length) {
+    console.log('BING', req.errors);
+    res.render('register', { pagename: 'Sign Up', errors: req.errors });
   } else {
-    res.render('register', { success: true, pagename: "register", });
+    console.log('BONG', req.errors);
+    res.render('register', { pagename: 'Sign Up', success: true });
   }
 });
 
