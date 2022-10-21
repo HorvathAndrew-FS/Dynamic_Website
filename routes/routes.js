@@ -51,7 +51,7 @@ router.post('/registration', formValidation, (req, res) => {
     res.render('register', { pagename: 'Sign Up', errors: req.errors });
   } else {
     console.log('BONG', req.errors);
-    res.render('register', { pagename: 'Sign Up', success: true });
+    res.render('register', { pagename: 'Sign Up', success: 'You have successfully registered' });
   }
 });
 

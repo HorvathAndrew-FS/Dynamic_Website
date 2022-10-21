@@ -10,7 +10,6 @@ const regex_Password = "/^[A-Za-z]\w{7,14}$/";
 
 
 module.exports = (req, res, next) => {
-  console.log('err in validate', );
 
    const fName = req.body.fName;
     const lName = req.body.lName;
@@ -51,7 +50,6 @@ module.exports = (req, res, next) => {
     }
 
   req.errors = errors;
-  console.log('errors before send', errors)
   next();
 };
 

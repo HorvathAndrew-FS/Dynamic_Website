@@ -2159,6 +2159,12 @@ progress {
     -webkit-overflow-scrolling: touch;
   }
 }
+.form-error {
+  color: red;
+  margin: 0;
+
+
+}
 .form-h2 {
   color: rgba(183,7,98, .75);
 }
